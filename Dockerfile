@@ -34,3 +34,4 @@ COPY matplotlibrc /root/.config/matplotlib/matplotlibrc
 RUN pip3 install --upgrade --no-cache-dir 'jupyterlab~=3.0'
 
 WORKDIR /home/work/
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser"]
