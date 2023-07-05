@@ -1,5 +1,5 @@
 # Reference : https://zenn.dev/fuchami/articles/d1625ac784fe5d
-FROM python:3.9
+FROM --platform=linux/x86_64 python:3.11
 
 RUN apt-get update -y \
     && apt-get upgrade -y
@@ -30,8 +30,10 @@ RUN pip3 install --upgrade pip && \
     && rm -rf ~/.cache/pip
 COPY matplotlibrc /root/.config/matplotlib/matplotlibrc
 
+EXPOSE 8888
+
 # install jupyter lab
-RUN pip3 install --upgrade --no-cache-dir 'jupyterlab~=3.0'
+RUN pip3 install --upgrade --no-cache-dir jupyterlab
 
 WORKDIR /home/work/
-CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser"]
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser", "--NotebookApp.token=''"]
