@@ -23,6 +23,9 @@ RUN curl -sL https://dev.nodesource.com/setup_12.x |bash - \
         /usr/local/src/* \
         /tmp/*
 
+# timezone
+ENV TZ Asia/Tokyo
+
 # install python library
 COPY requirements.txt .
 RUN pip3 install --upgrade pip && \

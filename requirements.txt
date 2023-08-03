@@ -1,9 +1,13 @@
 numpy
 pandas
 polars
+pyarrow
 matplotlib
 seaborn
 scikit-learn
 tqdm
 xlrd
 openpyxl
+isort
+black
+jupyterlab-code-formatter
