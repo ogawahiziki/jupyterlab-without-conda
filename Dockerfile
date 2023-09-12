@@ -1,5 +1,5 @@
 # Reference : https://zenn.dev/fuchami/articles/d1625ac784fe5d
-FROM python:3.11
+FROM --platform=amd64 python:3.11
 
 RUN apt-get update -y \
     && apt-get upgrade -y

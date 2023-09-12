@@ -3,6 +3,7 @@ services:
     jupyterlab:
         image: jupyterlab:without_conda
         container_name: jupyterlab_without_conda
+        platform: linux/amd64
         build: 
             context: .
             dockerfile: Dockerfile
